@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <h2 id="info" class="grande" title="Info sobre el número">Info sobre el número</h2>
+    
+    <input type="text" id="input" placeholder="Enter number(s)" />
+
+    <!-- Unary operations -->
+    <button onclick="square()">Square (x^2)</button>
+    <button onclick="cube()">Cube (x^3)</button>
+    <button onclick="sqrt()">Square Root</button>
+    <button id="modulo" onclick="mod()">Modulo</button>
+    <button id="factorial" onclick="fact()">Factorial</button>
+
+    <!-- Binary operations -->
+    <button id="multiplication" onclick="setOperation('multiply')">Multiply (x)</button>
+    <button id="addition" onclick="setOperation('add')">Add (+)</button>
+    <button id="equal" onclick="calculate()">=</button>
+
+    <!-- CSV operations -->
+    <button id="sumatorio" onclick="sumatorio()">Sum CSV</button>
+    <button id="ordenar" onclick="ordenar()">Sort CSV</button>
+    <button id="revertir" onclick="revertir()">Reverse CSV</button>
+    <button id="quitar" onclick="quitar()">Remove Last CSV</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
