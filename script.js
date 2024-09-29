@@ -2,12 +2,16 @@ let firstNumber = null;
 let operation = null;
 
 function setOperation(op) {
+  if (!validate()) return;  // Validate before proceeding
+
   firstNumber = parseFloat(document.getElementById('input').value);
   operation = op;
   document.getElementById('input').value = '';
 }
 
 function calculate() {
+  if (!validate()) return;  // Validate before proceeding
+
   const secondNumber = parseFloat(document.getElementById('input').value);
   let result;
   
@@ -22,6 +26,8 @@ function calculate() {
 }
 
 function square() {
+  if (!validate()) return;  // Validate before proceeding
+
   const value = parseFloat(document.getElementById('input').value);
   const result = value * value;
   document.getElementById('input').value = result;
@@ -29,6 +35,8 @@ function square() {
 }
 
 function cube() {
+  if (!validate()) return;  // Validate before proceeding
+
   const value = parseFloat(document.getElementById('input').value);
   const result = value * value * value;
   document.getElementById('input').value = result;
@@ -36,6 +44,8 @@ function cube() {
 }
 
 function sqrt() {
+  if (!validate()) return;  // Validate before proceeding
+
   const value = parseFloat(document.getElementById('input').value);
   const result = Math.sqrt(value);
   document.getElementById('input').value = result;
@@ -50,6 +60,8 @@ function mod() {
 }
 
 function fact() {
+  if (!validate()) return;  // Validate before proceeding
+
   const value = parseInt(document.getElementById('input').value);
   let result = 1;
   for (let i = value; i > 1; i--) {
@@ -60,6 +72,8 @@ function fact() {
 }
 
 function sumatorio() {
+  if (!validate()) return;  // Validate before proceeding
+
   const values = document.getElementById('input').value.split(',').map(Number);
   const result = values.reduce((a, b) => a + b, 0);
   document.getElementById('input').value = result;
@@ -67,6 +81,8 @@ function sumatorio() {
 }
 
 function ordenar() {
+  if (!validate()) return;  // Validate before proceeding
+
   const values = document.getElementById('input').value.split(',').map(Number);
   values.sort((a, b) => a - b);
   document.getElementById('input').value = values.join(',');
@@ -74,12 +90,16 @@ function ordenar() {
 }
 
 function revertir() {
+  if (!validate()) return;  // Validate before proceeding
+
   const values = document.getElementById('input').value.split(',').reverse();
   document.getElementById('input').value = values.join(',');
   updateInfo('Reversed CSV');
 }
 
 function quitar() {
+  if (!validate()) return;  // Validate before proceeding
+
   const values = document.getElementById('input').value.split(',');
   values.pop();
   document.getElementById('input').value = values.join(',');
@@ -96,3 +116,23 @@ function updateInfo(result) {
     info.textContent = 'Info: The result is greater than 200';
   }
 }
+
+function validate() {
+  const input = document.getElementById('input').value.trim();
+
+  // Check if it's a valid integer or decimal number (positive or negative)
+  const numberRegex = /^-?\d+(\.\d+)?$/;
+  
+  // Check if it's a valid CSV list of numbers
+  const csvRegex = /^-?\d+(\.\d+)?(,-?\d+(\.\d+)?)*$/;
+
+  if (numberRegex.test(input)) {
+    return true;  // Valid number input
+  } else if (csvRegex.test(input)) {
+    return true;  // Valid CSV input
+  } else {
+    alert('Error: Invalid input. Please enter a valid number or a CSV list.');
+    return false;  // Invalid input
+  }
+}
+
