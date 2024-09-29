@@ -13,12 +13,16 @@
     <input type="text" id="input" placeholder="Enter number(s)" />
 
     <!-- Unary operations -->
-    <button onclick="square()">Square (x^2)</button>
-    <button onclick="cube()">Cube (x^3)</button>
-    <button onclick="sqrt()">Square Root</button>
-    <button id="modulo" onclick="mod()">Modulo</button>
-    <button id="factorial" onclick="fact()">Factorial</button>
+    <div class="unary-operations">
+      <h3>Unary Operations</h3>
+      <button onclick="square()">Square (x^2)</button>
+      <button onclick="cube()">Cube (x^3)</button>
+      <button onclick="sqrt()">Square Root</button>
+      <button id="modulo" onclick="mod()">Modulo</button>
+      <button id="factorial" onclick="fact()">Factorial</button>
+    </div>
 
+    
     <!-- Binary operations -->
     <button id="multiplication" onclick="setOperation('multiply')">Multiply (x)</button>
     <button id="addition" onclick="setOperation('add')">Add (+)</button>
