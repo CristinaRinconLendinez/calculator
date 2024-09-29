@@ -22,17 +22,24 @@
       <button id="factorial" onclick="fact()">Factorial</button>
     </div>
 
-    
+
     <!-- Binary operations -->
-    <button id="multiplication" onclick="setOperation('multiply')">Multiply (x)</button>
-    <button id="addition" onclick="setOperation('add')">Add (+)</button>
-    <button id="equal" onclick="calculate()">=</button>
+    <div class="binary-operations">
+      <h3>Binary Operations</h3>
+      <button id="multiplication" onclick="setOperation('multiply')">Multiply (x)</button>
+      <button id="addition" onclick="setOperation('add')">Add (+)</button>
+      <button id="equal" onclick="calculate()">=</button>
+    </div>
+
 
     <!-- CSV operations -->
-    <button id="sumatorio" onclick="sumatorio()">Sum CSV</button>
-    <button id="ordenar" onclick="ordenar()">Sort CSV</button>
-    <button id="revertir" onclick="revertir()">Reverse CSV</button>
-    <button id="quitar" onclick="quitar()">Remove Last CSV</button>
+    <div class="csv-operations">
+      <h3>CSV Operations</h3>
+      <button id="sumatorio" onclick="sumatorio()">Sum CSV</button>
+      <button id="ordenar" onclick="ordenar()">Sort CSV</button>
+      <button id="revertir" onclick="revertir()">Reverse CSV</button>
+      <button id="quitar" onclick="quitar()">Remove Last CSV</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
