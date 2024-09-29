@@ -18,4 +18,4 @@ This is a simple web calculator with unary, binary, and CSV operations. It also 
 
 ## Link to Repository
 
-[Public Repository](https://github.com/your-username/calculator)
+[Public Repository](https://github.com/CristinaRinconLendinez/calculator)
